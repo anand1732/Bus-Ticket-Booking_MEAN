@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuZz </title>
+    <link rel="stylesheet" href="public/css/style.css">
+    <!-- Include Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="msg-btn">
+        <button id="contactButton" class="msg-btn"><i class='bx bx-message-square-minus bx-tada bx-md'
+                style='color:#ffffff'></i>
+        </button>
+    </div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo"><i class='bx bxs-bus bx-tada bx-md'></i> BuZz</a>
+            <ul class="nav-links">
+                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#about"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="#offer-section"><i class='bx bxs-offer'></i> Offers</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+            <div class="search-box">
+                <input type="text" placeholder="Search...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#"><i class="fa-solid fa-user-plus"></i> Sign In </a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="banner"></section>
+    <section class="banner-img1"></section>
+    <section class="booking-box">
+        <div class="container">
+            <h1>Quick Booking</h1>
+            <form id="searchForm">
+                
+                <input type="text" id="origin" placeholder="Origin" required>
+                <button id="swapButton">
+                    <i class='bx bx-transfer-alt bx-tada'></i>
+                </button>
+                <input type="text" id="destination" placeholder="Destination" required>
+                <input type="date" id="date" required>
+                <button type="submit" class="search-btn">Search Buses</button>
+            </form>
+            <div id="results">
+                <!-- Bus search results will appear here -->
+            </div>
+        </div>
+
+        <!-- Contact Modal -->
+        <div id="contactModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Chat Us</h2>
+                <form id="contactForm">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                    <input type="email" id="email" placeholder="Your Email" required>
+                    <textarea id="message" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="pop-up-btn">Send</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-row">
+                <div class="about-col1">
+                    <h1> About </h1>
+                    <p> BuZz is India’s largest online bus ticketing platform that has transformed bus travel
+                        in the country by bringing ease and convenience to millions of Indians who travel using
+                        buses. Founded in 2011. By providing widest choice, superior customer service, lowest
+                        prices and unmatched benefits, BuZz has served over 11 million customers. </p>
+                </div>
+                <div class="about-col2">
+                    <div class="about-img1">
+                        <div class="about-icon">
+                            <a href="https://x.com/EDRaj08"><i class='bx bxl-twitter'></i></a>
+                            <a href="https://www.facebook.com/rajraj.edr"><i class='bx bxl-facebook-circle'></i></a>
+                            <a href="https://www.instagram.com/dee__raj__/"><i class='bx bxl-instagram'></i></a>
+                            <a href="https://www.linkedin.com/in/e-d-raj/"><i class='bx bxl-linkedin-square'></i></a>
+                        </div>
+                        <div class="about-content">
+                            <h3>JHON</h3>
+                            <p> Chief Executive Officer </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-col2">
+                    <div class="about-img2">
+                        <div class="about-icon">
+                            <a href="https://x.com/EDRaj08"><i class='bx bxl-twitter'></i></a>
+                            <a href="https://www.facebook.com/rajraj.edr"><i class='bx bxl-facebook-circle'></i></a>
+                            <a href="https://www.instagram.com/dee__raj__/"><i class='bx bxl-instagram'></i></a>
+                            <a href="https://www.linkedin.com/in/e-d-raj/"><i class='bx bxl-linkedin-square'></i></a>
+                        </div>
+                        <div class="about-content">
+                            <h3>ALAN</h3>
+                            <p> Chief Executive Officer </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-col2">
+                    <div class="about-img3">
+                        <div class="about-icon">
+                            <a href="https://x.com/EDRaj08"><i class='bx bxl-twitter'></i></a>
+                            <a href="https://www.facebook.com/rajraj.edr"><i class='bx bxl-facebook-circle'></i></a>
+                            <a href="https://www.instagram.com/dee__raj__/"><i class='bx bxl-instagram'></i></a>
+                            <a href="https://www.linkedin.com/in/e-d-raj/"><i class='bx bxl-linkedin-square'></i></a>
+                        </div>
+                        <div class="about-content">
+                            <h3>STEVE</h3>
+                            <p> Chief Executive Officer </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Additional About Content here -->
+            </div>
+        </div>
+    </section>
+
+    <section class="offer-section" id="offer-section">
+        <div class="offer-container">
+            <h2 class="offer-title">Special Offers</h2>
+            <div class="offer-row">
+                <div class="offer-card">
+                    <div class="offer-image" style="background-image: url(public/img/NIkeFactory.jpg);"></div>
+                    <div class="offer-content">
+                        <p>Get a Coupon on your Next Booking</p>
+                        <button>Get Offer</button>
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-image" style="background-image: url(public/img/domino.jpg);"></div>
+                    <div class="offer-content">
+                        <p>Get a Coupon on your Next Booking</p>
+                        <button>Get Offer</button>
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-image" style="background-image: url(public/img/sonyliv.jpg);"></div>
+                    <div class="offer-content">
+                        <h3>SUMMER BONANZA! Get a Free AC every day!</h3>
+                        <p>Get a Coupon on your Next Booking</p>
+                        <button>Get Offer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="contact-row">
+                <div class="contact-col1">
+                    <h1> Contact </h1>
+                    <p> Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
+                        sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
+                        ea. Quia fugiat sit in iste officiis commodi quidem hic quas. </p>
+                </div>
+                <div class="contact-col2">
+                    <div class="contact-content">
+                        <div class="contact-icon"><i class='bx bxs-map'></i></div>
+                        <h3> Our Address </h3>
+                        <p> A108 Adam Street,
+                            New York,
+                            NY 535022 </p>
+                    </div>
+                </div>
+                <div class="contact-col3">
+                    <div class="contact-content">
+                        <div class="contact-icon"><i class='bx bx-envelope'></i></div>
+                        <h3> Email </h3>
+                        <p> info@example.com
+                            contact@example.com </p>
+                    </div>
+                </div>
+                <div class="contact-col4">
+                    <div class="contact-content">
+                        <div class="contact-icon"><i class='bx bx-phone-call'></i></div>
+                        <h3> Contact </h3>
+                        <p> +91 63808 52380 <br>
+                            +91 95143 41438 </p>
+                                                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div id='root'></div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set up search functionality
+            const searchButton = document.querySelector('.search-box button');
+            const searchInput = document.querySelector('.search-box input[type="text"]');
+
+            const handleSearch = () => {
+                const query = searchInput.value;
+                alert(`You searched for: ${query}`);
+            };
+
+            searchButton.addEventListener('click', handleSearch);
+            searchInput.addEventListener('keypress', (event) => {
+                if (event.key === 'Enter') {
+                    handleSearch();
+                }
+            });
+
+            // Set the current date as the default value for the date input
+            const dateInput = document.getElementById('date');
+            const today = new Date();
+            const year = today.getFullYear();
+            const month = String(today.getMonth() + 1).padStart(2, '0');
+            const day = String(today.getDate()).padStart(2, '0');
+            dateInput.value = `${year}-${month}-${day}`;
+
+            // Contact modal functionality
+            const modal = document.getElementById('contactModal');
+            const btn = document.getElementById('contactButton');
+            const span = document.getElementsByClassName('close')[0];
+
+            btn.onclick = () => {
+                modal.style.display = 'block';
+            };
+
+            span.onclick = () => {
+                modal.style.display = 'none';
+            };
+
+            window.onclick = (event) => {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                }
+            };
+
+            // Prevent form submission and show an alert instead
+            document.getElementById('contactForm').addEventListener('submit', (event) => {
+                event.preventDefault();
+                alert('Thank you for contacting us!');
+                modal.style.display = 'none';
+            });
+
+            // Handle search form submission
+            document.getElementById('searchForm').addEventListener('submit', (event) => {
+                event.preventDefault();
+
+                // Get form values
+                const origin = document.getElementById('origin').value;
+                const destination = document.getElementById('destination').value;
+                const date = document.getElementById('date').value;
+
+                // Sample data representing fetched bus results
+                const buses = [
+                    { busId: 1, origin, destination, date, seats: 30 },
+                    { busId: 2, origin, destination, date, seats: 25 },
+                    { busId: 3, origin, destination, date, seats: 40 },
+                    { busId: 4, origin, destination, date, seats: 15 },
+                    { busId: 5, origin, destination, date, seats: 23 },
+                ];
+
+                // Display results
+                const resultsDiv = document.getElementById('results');
+                resultsDiv.innerHTML = '';  // Clear previous results
+
+                if (buses.length === 0) {
+                    resultsDiv.innerHTML = '<p>No buses found.</p>';
+                } else {
+                    buses.forEach(bus => {
+                        const busDiv = document.createElement('div');
+                        busDiv.classList.add('bus');
+                        busDiv.innerHTML = `
+                            <span>${bus.origin} to ${bus.destination}</span>
+                            <span>Date: ${bus.date}</span>
+                            <span>Seats Available: ${bus.seats}</span>
+                            <button onclick="viewSeats(${bus.busId})">View Seats</button>
+                        `;
+                        resultsDiv.appendChild(busDiv);
+                    });
+                }
+            });
+
+            // Swap origin and destination values
+            document.getElementById('swapButton').addEventListener('click', () => {
+                const originInput = document.getElementById('origin');
+                const destinationInput = document.getElementById('destination');
+
+                const temp = originInput.value;
+                originInput.value = destinationInput.value;
+                destinationInput.value = temp;
+            });
+        });
+
+       
+        function viewSeats(busId) {
+          
+    const origin = document.getElementById('origin').value;
+    const destination = document.getElementById('destination').value;
+    const date = document.getElementById('date').value;
+    
+
+    // Redirect to seat selection page with query parameters
+    window.location.href = `./public/seats.html?busId=${busId}&origin=${origin}&destination=${destination}&date=${date}`;
+}
+function goToSeatPage() {
+            const origin = document.getElementById('origin').value;
+            const destination = document.getElementById('destination').value;
+
+            // Store data in local storage
+            localStorage.setItem('origin', origin);
+            localStorage.setItem('destination', destination);
+
+            // Redirect to seat.html
+            window.location.href = 'seat.html';}
+
+    </script>
+</body>
+
+</html>

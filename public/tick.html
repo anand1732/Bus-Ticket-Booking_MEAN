@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .ticket-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 2px solid #007BFF;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #007BFF;
+            text-align: center;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .btn {
+            display: block;
+            width: 100px;
+            margin: 20px auto;
+            padding: 10px;
+            text-align: center;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="ticket-container">
+        <h1>Ticket Confirmation</h1>
+        
+        <p><strong>Route:</strong> <span id="route"></span></p>
+        <p><strong>Date of Journey:</strong> <span id="dateOfJourney"></span></p>
+        <p><strong>Selected Seats:</strong> <span id="selectedSeats"></span></p>
+        <p><strong>Total Amount:</strong> ₹<span id="totalAmount"></span></p>
+        
+        <button class="btn" onclick="saveTicket()">Save</button>
+        <a href="../index.html" class="btn">Home</a>
+        <button class="btn print-btn" onclick="window.print()">Print</button>
+        
+    </div>
+
+    <script>
+        // Extract the URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const origin = urlParams.get('origin');
+        const destination = urlParams.get('destination');
+        const date = urlParams.get('date');
+        const selectedSeats = urlParams.get('seats');
+        const totalAmount = urlParams.get('totalAmount');
+
+        // Display the ticket details
+        document.getElementById('route').textContent = `${origin} to ${destination}`;
+        document.getElementById('dateOfJourney').textContent = date;
+        document.getElementById('selectedSeats').textContent = selectedSeats;
+        document.getElementById('totalAmount').textContent = parseFloat(totalAmount).toFixed(2);
+
+        // Function to save ticket details
+        function saveTicket() {
+            const ticketData = {
+                route: `${origin} to ${destination}`,
+                dateOfJourney: date,
+                selectedSeats: selectedSeats,
+                totalAmount: parseFloat(totalAmount)
+            };
+
+            fetch('http://localhost:3000/api/tickets', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(ticketData)
+})
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                alert('Ticket saved successfully!');
+                console.log('Success:', data);
+            })
+            .catch((error) => {
+                alert('Error saving ticket: ' + error.message);
+                console.error('Error:', error);
+            });
+        }
+        console.log(ticketData);
+    </script>
+</body>
+</html>
